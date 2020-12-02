@@ -4,10 +4,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 
-# Write ethe form by taking the below form as example and replicate with our user fields
-# then i will write the other logic :)
-#commit this to git and send me the link
-
 class LoginForm(forms.Form):
     # This is similar to Serializeerr defined
     username = forms.CharField(
