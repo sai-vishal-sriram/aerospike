@@ -22,108 +22,146 @@
                                 <hr>
 
 
+                                <form role="form" method="post" action="">
 
+                        {% csrf_token %}
 
-                                    <form>
-  <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Namespace</label>
-    <div class="col-sm-2">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="Name space">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Destination Network Address</label>
-    <div class="col-sm-2">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="Destination Network Address">
-    </div>
-  </div>
+                        <div class="input-group mb-3">
+                            {{ form.namespace }}
+                        </div>
+                        <span class="text-error">{{ form.namespace.errors }}</span>
 
-                                        <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Source FileSystem Path</label>
-    <div class="col-sm-2">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="Source FileSystem Path">
-    </div>
-  </div>
+                        <div class="input-group mb-3">
+                            {{ form.dest_ntk_addr }}
+                        </div>
+                        <span class="text-error">{{ form.dest_ntk_addr.errors }}</span>
 
+                        <div class="input-group mb-4">
+                            {{ form.srcfilesys }}
+                        </div>
+                        <span class="text-error">{{ form.srcfilesys.errors }}</span>
 
-                                        <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">SSH Username</label>
-    <div class="col-sm-2">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="SSH Username">
-    </div>
-  </div>
+                        <div class="input-group mb-4">
+                            {{ form.ssh_username }}
+                        </div>
+                        <span class="text-error">{{ form.ssh_username.errors }}</span>
+                                    <div class="input-group mb-4">
+                            {{ form.ssh_password }}
+                        </div>
+                        <span class="text-error">{{ form.ssh_password.errors }}</span>
 
-                                        <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">SSH Password</label>
-    <div class="col-sm-2">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="SSH Password">
-    </div>
-  </div>
+<!--                        <div class="form-group text-left">-->
+<!--                            <div class="checkbox checkbox-fill d-inline">-->
+<!--                                <input type="checkbox" name="checkbox-fill-1" id="checkbox-fill-a1" checked="">-->
+<!--                                <label for="checkbox-fill-a1" class="cr"> Agree with <a href="#">terms</a></label>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <button type="submit" name="register" class="btn btn-primary shadow-2 mb-4">Register</button>
 
-                                        <div class="form-group row">
-    <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Get Available Backups</button>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <div class="col-sm-2">Advanced</div>
-    <div class="col-sm-4">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck1">
-        <label class="form-check-label" for="gridCheck1">
-        </label>
-      </div>
-    </div>
+                    </form>
 
 
 
+<!--                                    <form>-->
+<!--  <div class="form-group row">-->
+<!--    <label for="inputEmail3" class="col-sm-2 col-form-label">Namespace</label>-->
+<!--    <div class="col-sm-2">-->
+<!--      <input type="email" class="form-control" id="inputEmail3" placeholder="Name space">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="form-group row">-->
+<!--    <label for="inputPassword3" class="col-sm-2 col-form-label">Destination Network Address</label>-->
+<!--    <div class="col-sm-2">-->
+<!--      <input type="password" class="form-control" id="inputPassword3" placeholder="Destination Network Address">-->
+<!--    </div>-->
+<!--  </div>-->
 
-       <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Namespace</label>
-    <div class="col-sm-2">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="Take from backup file">
-    </div>
-  </div>
-
-
-
-       <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Threads</label>
-    <div class="col-sm-2">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="20">
-    </div>
-  </div>
-
-
-
-      <div class="col-sm-2">Missing Records Only</div>
-    <div class="col-sm-2">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck1">
-        <label class="form-check-label" for="gridCheck1">
-        </label>
-      </div>
-    </div>
+<!--                                        <div class="form-group row">-->
+<!--    <label for="inputPassword3" class="col-sm-2 col-form-label">Source FileSystem Path</label>-->
+<!--    <div class="col-sm-2">-->
+<!--      <input type="password" class="form-control" id="inputPassword3" placeholder="Source FileSystem Path">-->
+<!--    </div>-->
+<!--  </div>-->
 
 
-      <div class="col-sm-2">Ignore Generation Numbers</div>
-    <div class="col-sm-2">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck1">
-        <label class="form-check-label" for="gridCheck1">
-        </label>
-      </div>
-    </div>
+<!--                                        <div class="form-group row">-->
+<!--    <label for="inputPassword3" class="col-sm-2 col-form-label">SSH Username</label>-->
+<!--    <div class="col-sm-2">-->
+<!--      <input type="password" class="form-control" id="inputPassword3" placeholder="SSH Username">-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--                                        <div class="form-group row">-->
+<!--    <label for="inputPassword3" class="col-sm-2 col-form-label">SSH Password</label>-->
+<!--    <div class="col-sm-2">-->
+<!--      <input type="password" class="form-control" id="inputPassword3" placeholder="SSH Password">-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--                                        <div class="form-group row">-->
+<!--    <div class="col-sm-10">-->
+<!--      <button type="submit" class="btn btn-primary">Get Available Backups</button>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <div class="form-group row">-->
+<!--    <div class="col-sm-2">Advanced</div>-->
+<!--    <div class="col-sm-4">-->
+<!--      <div class="form-check">-->
+<!--        <input class="form-check-input" type="checkbox" id="gridCheck1">-->
+<!--        <label class="form-check-label" for="gridCheck1">-->
+<!--        </label>-->
+<!--      </div>-->
+<!--    </div>-->
 
 
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-2">
-      <button type="submit" class="btn btn-primary">Restore</button>
-    </div>
-  </div>
-</form>
+
+
+<!--       <div class="form-group row">-->
+<!--    <label for="inputEmail3" class="col-sm-2 col-form-label">Namespace</label>-->
+<!--    <div class="col-sm-2">-->
+<!--      <input type="email" class="form-control" id="inputEmail3" placeholder="Take from backup file">-->
+<!--    </div>-->
+<!--  </div>-->
+
+
+
+<!--       <div class="form-group row">-->
+<!--    <label for="inputEmail3" class="col-sm-2 col-form-label">Threads</label>-->
+<!--    <div class="col-sm-2">-->
+<!--      <input type="email" class="form-control" id="inputEmail3" placeholder="20">-->
+<!--    </div>-->
+<!--  </div>-->
+
+
+
+<!--      <div class="col-sm-2">Missing Records Only</div>-->
+<!--    <div class="col-sm-2">-->
+<!--      <div class="form-check">-->
+<!--        <input class="form-check-input" type="checkbox" id="gridCheck1">-->
+<!--        <label class="form-check-label" for="gridCheck1">-->
+<!--        </label>-->
+<!--      </div>-->
+<!--    </div>-->
+
+
+<!--      <div class="col-sm-2">Ignore Generation Numbers</div>-->
+<!--    <div class="col-sm-2">-->
+<!--      <div class="form-check">-->
+<!--        <input class="form-check-input" type="checkbox" id="gridCheck1">-->
+<!--        <label class="form-check-label" for="gridCheck1">-->
+<!--        </label>-->
+<!--      </div>-->
+<!--    </div>-->
+
+
+<!--  </div>-->
+<!--  <div class="form-group row">-->
+<!--    <div class="col-sm-2">-->
+<!--      <button type="submit" class="btn btn-primary">Restore</button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</form>-->
 
 
                             </div>
